@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Paciente" table="Paciente">
+    <id name="idpaciente" association-key="true"/>
+    <field name="numss" type="string" column="NumSS" length="50" nullable="false">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="nombre" type="string" column="Nombre" length="50" nullable="false">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="apellidos" type="string" column="Apellidos" length="50" nullable="false">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="sexo" type="boolean" column="Sexo" nullable="false"/>
+    <one-to-one field="idpaciente" target-entity="Paciente" fetch="LAZY">
+      <join-columns>
+        <join-column name="IdPaciente" referenced-column-name="IdPaciente"/>
+      </join-columns>
+    </one-to-one>
+  </entity>
+</doctrine-mapping>

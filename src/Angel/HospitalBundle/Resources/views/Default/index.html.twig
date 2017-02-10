@@ -1,0 +1,6 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <h2>Eres Medico o Paciente</h2>
+    <a href="{{ path('paciente_index') }}"><button>Paciente</button></a>
+    <a href="{{ path('medico_index') }}"><button>Medico</button></a>
+{% endblock %}
